@@ -1,2 +1,37 @@
-# Master-Estadistica-Taller-Consultoria-Capstone1
-Trabajo correspondiente al Capstone 1 del Taller de Consultoría del Magister en Estadística de la PUCV, segundo semestre de 2026.
+# Forecast de Demanda en Retail
+
+Este repositorio contiene el código y análisis de un proyecto de curso centrado en la predicción de series de tiempo para demanda en retail. Utilizando el dataset de la competencia **M5 Forecasting (Kaggle)**, el proyecto evalúa el desempeño de modelos estadísticos tradicionales frente a algoritmos modernos de Machine Learning.
+
+---
+
+## Objetivo del Proyecto
+
+El objetivo principal es predecir la demanda diaria de productos de retail en un horizonte de **8 semanas (56 días)**, comparando el rendimiento, la precisión y el costo computacional de tres enfoques distintos:
+1. Un modelo empírico de referencia (**Seasonal Naïve**).
+2. Un modelo estadístico clásico univariado (**SARIMA**).
+3. Un modelo global de Machine Learning basado en árboles de decisión (**XGBoost**).
+
+---
+
+## Alcance
+
+*   **Dataset:** Datos de ventas diarias de tiendas Walmart (Kaggle M5 Forecasting).
+*   **Segmentación:** Nos enfocamos en la categoría `FOODS` y la tienda `CA_1`, seleccionando específicamente una muestra aleatoria de 10 productos catalogados como "Smooth" (de demanda regular y estable) para la validación final.
+*   **Horizonte de Pronóstico (Test):** 56 días.
+*   **Estrategia de Modelado:** 
+    *   *Local:* SARIMA se entrenó de forma aislada para cada uno de los 10 productos seleccionados.
+    *   *Global:* XGBoost se entrenó con el dataset masivo completo (millones de filas) usando *Cross-Learning*, para luego validar sus predicciones únicamente en los 10 productos seleccionados.
+*   **Métricas de Evaluación:** MAE (Mean Absolute Error).
+
+---
+
+## 📁 Estructura del Repositorio
+
+```text
+├── data/                              # Datos originales de Kaggle (sales_train_evaluation.csv, calendar.csv, etc.)
+├── models/                          # Modelos entrenados
+│   ├── sarima_models.pkl            # Modelos SARIMA entrenados 
+│   └── xgboost_m5_global_gpu.pkl    # Modelo XGBoost entrenado 
+├── notebooks/                         # Cuadernos de análisis
+│   └── capstone_1.ipynb             # Cuaderno principal de análisis y modelado
+└── README.md                        # Descripción del proyecto
