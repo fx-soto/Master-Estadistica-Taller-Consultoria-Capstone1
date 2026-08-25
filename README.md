@@ -25,7 +25,7 @@ El objetivo principal es predecir la demanda diaria de productos de retail en un
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 ├── data/                            # Datos originales de Kaggle (sales_train_evaluation.csv, calendar.csv)
