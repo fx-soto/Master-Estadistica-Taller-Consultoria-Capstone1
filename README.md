@@ -6,8 +6,8 @@ Este repositorio contiene el código y análisis de un proyecto de curso centrad
 
 ## Objetivo del Proyecto
 
-El objetivo principal es predecir la demanda diaria de productos de retail en un horizonte de **8 semanas (56 días)**, comparando el rendimiento, la precisión y el costo computacional de tres enfoques distintos:
-1. Un modelo empírico de referencia (**Seasonal Naïve**).
+El objetivo principal es predecir la demanda diaria de productos de retail en un horizonte de **8 semanas (56 días)**, comparando el rendimiento de tres enfoques distintos:
+1. Un modelo empírico de referencia, usado como baseline (**Seasonal Naive**).
 2. Un modelo estadístico clásico univariado (**SARIMA**).
 3. Un modelo global de Machine Learning basado en árboles de decisión (**XGBoost**).
 
